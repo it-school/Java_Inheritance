@@ -1,4 +1,4 @@
-package classes;
+package classes.example1;
 
 public enum Roles {
    rector,
