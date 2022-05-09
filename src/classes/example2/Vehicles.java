@@ -20,8 +20,7 @@ public class Vehicles {
    }
 
    public void remove(int number) {
-      if (number < garage.size())
-         garage.remove(number);
+      if (number < garage.size()) garage.remove(number);
    }
 
    public void remove(Vehicle vehicle) {
@@ -32,8 +31,7 @@ public class Vehicles {
       Vehicles result = new Vehicles();
 
       for (Vehicle item : garage) {
-         if (item.getClass().getSimpleName().toLowerCase().contains(type.toLowerCase()))
-            result.add(item);
+         if (item.getClass().getSimpleName().toLowerCase().contains(type.toLowerCase())) result.add(item);
       }
 
       return result;

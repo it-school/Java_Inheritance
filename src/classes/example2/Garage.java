@@ -4,9 +4,10 @@ import java.util.Arrays;
 
 public class Garage {
    private final Vehicle[] vehicles;
-   private int currentNumberOfVehicles = 0;
+   private int currentNumberOfVehicles;
 
    public Garage(int number) {
+      currentNumberOfVehicles = 0;
       vehicles = new Vehicle[number > 0 ? number : 1];
    }
 
