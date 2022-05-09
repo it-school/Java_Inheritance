@@ -10,6 +10,10 @@ public class Garage {
       vehicles = new Vehicle[number > 0 ? number : 1];
    }
 
+   public int getCurrentNumberOfVehicles() {
+      return currentNumberOfVehicles;
+   }
+
    public boolean addVehicle(Vehicle vehicle) {
       boolean result = false;
       if (currentNumberOfVehicles == 0) {

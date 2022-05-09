@@ -10,12 +10,13 @@ public class Vehicles {
       garage = new ArrayList<>();
    }
 
-   public void add(Vehicle vehicle) {
-      garage.add(vehicle);
+   @Override
+   public String toString() {
+      return "Vehicles " + garage;
    }
 
-   public void remove(Vehicle vehicle) {
-      garage.remove(vehicle);
+   public boolean add(Vehicle vehicle) {
+      return garage.add(vehicle);
    }
 
    public void remove(int number) {
@@ -23,36 +24,22 @@ public class Vehicles {
          garage.remove(number);
    }
 
-   public int getSize() {
-      return this.garage.size();
+   public void remove(Vehicle vehicle) {
+      garage.remove(vehicle);
    }
 
-   public int countOf(String type) {
-      /*
-      int counter = 0;
-
-      for (Vehicle item : garage) {
-         if (item.getClass().getSimpleName().equalsIgnoreCase(type))
-            counter++;
-      }
-      return counter;
-       */
-      return getListOf(type).getSize();
-   }
-
-   public Vehicles getListOf(String type) {
+   public Vehicles findByType(String type) {
       Vehicles result = new Vehicles();
 
       for (Vehicle item : garage) {
-         if (item.getClass().getSimpleName().equalsIgnoreCase(type))
+         if (item.getClass().getSimpleName().toLowerCase().contains(type.toLowerCase()))
             result.add(item);
       }
 
       return result;
    }
 
-   @Override
-   public String toString() {
-      return "Vehicles{" + garage + '}';
+   public int countByType(String type) {
+      return this.findByType(type).garage.size();
    }
 }
