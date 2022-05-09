@@ -36,6 +36,23 @@ public class Main {
       garage.addVehicle(new Truck("Tesla", "Ilon Mask", new Coordinates(42.63f, 130.92f), FuelType.electric, 30));
 
       System.out.println(System.lineSeparator() + garage);
+
+      System.out.println("----------\n");
+      Vehicles vehicles = new Vehicles();
+      vehicles.add(ship1);
+      vehicles.add(truck1);
+      vehicles.add(new Truck("BelAZ", "I am", new Coordinates(30f, 30f), FuelType.diesel, 500));
+      vehicles.add(truck1);
+      System.out.println(vehicles);
+/*
+      vehicles.remove(truck1);
+      vehicles.remove(1);
+      System.out.println("----------\n");
+      System.out.println(vehicles);
+      */
+      System.out.println("Ships count: " + vehicles.countOf("ship"));
+
+      System.out.println("All trucks: " + vehicles.getListOf("truck"));
    }
 
    private static void example1() {
