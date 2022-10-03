@@ -7,13 +7,24 @@ import java.time.LocalDate;
  */
 public class Person {
    protected String name;
+
+   public String getNameEng() {
+      return nameEng;
+   }
+
+   public void setNameEng(String nameEng) {
+      this.nameEng = nameEng.strip();
+   }
+
+   protected String nameEng;
    protected String address;
    protected LocalDate birthday;
    protected String phone;
    protected String email;
 
-   public Person(String name, String address, LocalDate birthday, String phone, String email) {
+   public Person(String name, String nameEng, String address, LocalDate birthday, String phone, String email) {
       this.setName(name);
+      this.setNameEng(nameEng);
       this.setAddress(address);
       this.setBirthday(birthday);
       this.setPhone(phone);
@@ -62,6 +73,8 @@ public class Person {
 
    @Override
    public String toString() {
-      return System.lineSeparator() + this.getClass().getSimpleName() + "{" + "name='" + name + '\'' + ", address='" + address + '\'' + ", birthday=" + birthday + ", phone='" + phone + '\'' + "," + " " + "email='" + email + '\'' + '}';
+      return System.lineSeparator() + this.getClass().getSimpleName() + "{" + "name='" + name + '\'' + ", nameEng='" + nameEng + '\'' + ", address='" + address + '\'' + ", " +
+              "birthday" +
+              "=" + birthday + ", phone='" + phone + '\'' + "," + " " + "email='" + email + '\'' + '}';
    }
 }

@@ -6,8 +6,8 @@ public abstract class Vehicle implements IVehicle {
    protected Coordinates coordinates;
 
    protected Vehicle(String title, String master, Coordinates coordinates) {
-      this.title = title;
-      this.master = master;
+      this.setTitle(title);
+      this.setMaster(master);
       this.coordinates = coordinates;
    }
 
@@ -43,11 +43,12 @@ public abstract class Vehicle implements IVehicle {
 
    @Override
    public void setPosition(float longitude, float latitude) {
-      this.coordinates = new Coordinates(longitude, latitude);
+      this.coordinates.setLatitude(latitude);
+      this.coordinates.setLongitude(longitude);
    }
 
    @Override
    public String toString() {
-      return "Vehicle{" + "title='" + title + '\'' + ", master='" + master + '\'' + ", coordinates=" + coordinates + "}";
+      return "Vehicle{" + "title:'" + title + '\'' + ", master='" + master + '\'' + ", coordinates=" + coordinates + "}";
    }
 }

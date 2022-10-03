@@ -6,8 +6,8 @@ public class Employee extends UniversityPerson {
    protected String department;
    protected Roles role;
 
-   public Employee(String name, String address, LocalDate birthday, String phone, String email, LocalDate entranceDate, String department, Roles role) {
-      super(name, address, birthday, phone, email, entranceDate);
+   public Employee(String name, String nameEng, String address, LocalDate birthday, String phone, String email, LocalDate entranceDate, String department, Roles role) {
+      super(name, nameEng, address, birthday, phone, email, entranceDate);
       this.setDepartment(department);
       this.role = role;
    }

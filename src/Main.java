@@ -11,16 +11,17 @@ public class Main {
              Student (specialty, course)
              Employee (department, role)
      */
-      Person person1 = new Person("Bill", "Odessa", LocalDate.of(2000, 12, 15), "+380963258741", "email@email.com");
+
+      Person person1 = new Person("Bill", "EngName", "Odessa", LocalDate.of(2000, 12, 15), "+380963258741", "email@email.com");
       System.out.println(person1);
 
-      UniversityPerson universityPerson = new UniversityPerson("John", "Odessa", LocalDate.of(1999, 1, 1), "+38097867896581", "univ@email.com", LocalDate.of(2021, 9, 1));
+      UniversityPerson universityPerson = new UniversityPerson("John", "EngName", "Odessa", LocalDate.of(1999, 1, 1), "+38097867896581", "univ@email.com", LocalDate.of(2021, 9, 1));
       System.out.println(universityPerson);
 
-      Student student = new Student("Oleg", "Kiev", LocalDate.of(2003, 7, 21), "+38058254465466", "stud@op.edu.ua", LocalDate.of(2021, 9, 1), "151", 1);
+      Student student = new Student("Oleg", "EngName", "Kiev", LocalDate.of(2003, 7, 21), "+38058254465466", "stud@op.edu.ua", LocalDate.of(2021, 9, 1), "151", 1);
       System.out.println(student);
 
-      Employee employee = new Employee("Joe", "London", LocalDate.of(1983, 12, 31), "+38054465466", "staff@op.edu.ua", LocalDate.of(2011, 1, 1), "ICS", Roles.EDUCATOR);
+      Employee employee = new Employee("Joe", "EngName", "London", LocalDate.of(1983, 12, 31), "+38054465466", "staff@op.edu.ua", LocalDate.of(2011, 1, 1), "ICS", Roles.EDUCATOR);
       System.out.println(employee);
 
       UniversityPerson[] people = new UniversityPerson[2];
@@ -31,6 +32,28 @@ public class Main {
       for (Object person : people) {
          System.out.println(person);
       }
+
+      Employee[] employees = new Employee[3];
+      employees[0] = employee;
+/*
+      employees[1] = (Employee) universityPerson;
+      employees[2] = (Employee) person1;
+*/
+      employees[2] = new Employee("asgdhfxj", "EngName", "dzhfxjghck", LocalDate.of(1983, 12, 31), "3456789", "dsfghcjk@sdfghxj", LocalDate.of(1983, 12, 31), "IIBRT", Roles.STAFF);
+      System.out.println("\n-----------------\n");
+      for (Object person : employees) {
+         System.out.println(person);
+      }
+
+      System.out.println("\n\n\n-----------------\n");
+      Staff staff = new Staff();
+      staff.addPerson(employee);
+      staff.addPerson(student);
+      staff.addPerson(universityPerson);
+
+      System.out.println(staff);
+      System.out.println(staff.findYounger(42).getQuantity());
+      System.out.println(staff.findYounger(42));
    }
 
    private static void example2() {
@@ -45,17 +68,19 @@ public class Main {
             Vehicles[]
        */
       Ship ship1 = new Ship("Odessa", "ShipMaster", new Coordinates(42.33f, 30.42f), "Odessa", 30);
-      System.out.println(ship1);
-      ship1.moveTo(0, 0);
+//      System.out.println(ship1);
+//      ship1.moveTo(0, 0);
 
       Truck truck1 = new Truck("MAZ", "Ivanov", new Coordinates(42.63f, 30.92f), FuelType.diesel, 20);
-      System.out.println(truck1);
-      truck1.moveTo(50, 30);
+//      System.out.println(truck1);
+//      truck1.moveTo(50, 30);
 
-      Garage garage = new Garage(5);
+      Plane plane = new Plane("AH-123", "QQQQ", new Coordinates(30, 43), 200, 5000);
+
+      Garage garage = new Garage(6);
       garage.addVehicle(ship1);
       garage.addVehicle(truck1);
-      garage.addVehicle(truck1);
+      garage.addVehicle(plane);
       garage.addVehicle(truck1);
       garage.addVehicle(new Truck("Tesla", "Ilon Mask", new Coordinates(42.63f, 130.92f), FuelType.electric, 30));
 
@@ -64,6 +89,12 @@ public class Main {
 
       System.out.println("-------------------\n");
 
+      garage.addVehicle(new Truck("Tesla2", "Ilon Mask", new Coordinates(42.63f, 130.92f), FuelType.electric, 30));
+      garage.addVehicle(new Truck("Tesla3", "Ilon Mask", new Coordinates(42.63f, 130.92f), FuelType.electric, 30));
+      garage.addVehicle(new Truck("Tesla4", "Ilon Mask", new Coordinates(42.63f, 130.92f), FuelType.electric, 30));
+      System.out.println(System.lineSeparator() + garage);
+
+/*
       Vehicles vehicles = new Vehicles();
       vehicles.add(ship1);
       vehicles.add(truck1);
@@ -85,10 +116,12 @@ public class Main {
 
       System.out.println("\nAll ships:\n" + vehicles.findByType("ship"));
       System.out.println("Quantity:\t" + vehicles.countByType("ship"));
+
+ */
    }
 
    public static void main(String[] args) {
-      example1();
-      example2();
+//      example1();
+//      example2();
    }
 }

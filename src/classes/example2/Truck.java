@@ -2,12 +2,13 @@ package classes.example2;
 
 public class Truck extends Vehicle {
    private static final int DEFAULT_MASS = 10;
+   private static final int MAX_MASS = 50;
    private FuelType fuel;
    private int mass;
 
    public Truck(String title, String master, Coordinates coordinates, FuelType fuel, int mass) {
       super(title, master, coordinates);
-      this.fuel = fuel;
+      this.setFuel(fuel);
       this.setMass(mass);
    }
 
@@ -24,7 +25,7 @@ public class Truck extends Vehicle {
    }
 
    public void setMass(int mass) {
-      this.mass = mass > 0 ? mass : DEFAULT_MASS;
+      this.mass = mass > 0 && mass < MAX_MASS ? mass : DEFAULT_MASS;
    }
 
    @Override
@@ -40,6 +41,6 @@ public class Truck extends Vehicle {
 
    @Override
    public String toString() {
-      return getClass().getSimpleName() + " " + super.toString().replace("}", "") + ", fuel type: " + fuel + ", max mass: " + mass + "}\n";
+      return System.lineSeparator() + getClass().getSimpleName() + " " + super.toString().replace("}", "") + ", fuel type: " + fuel + ", max mass: " + mass + "}\n";
    }
 }

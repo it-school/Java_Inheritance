@@ -7,8 +7,8 @@ public class Student extends UniversityPerson {
    protected String specialty;
    protected int course;
 
-   public Student(String name, String address, LocalDate birthday, String phone, String email, LocalDate entranceDate, String specialty, int course) {
-      super(name, address, birthday, phone, email, entranceDate);
+   public Student(String name, String nameEng, String address, LocalDate birthday, String phone, String email, LocalDate entranceDate, String specialty, int course) {
+      super(name, nameEng, address, birthday, phone, email, entranceDate);
       this.setSpecialty(specialty);
       this.setCourse(course);
    }

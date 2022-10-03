@@ -3,8 +3,12 @@ package classes.example2;
 import java.util.Arrays;
 
 public class Garage {
-   private final Vehicle[] vehicles;
+   private Vehicle[] vehicles;
    private int currentNumberOfVehicles;
+
+   public Garage() {
+      vehicles = new Vehicle[1];
+   }
 
    public Garage(int number) {
       currentNumberOfVehicles = 0;
@@ -27,6 +31,12 @@ public class Garage {
             // todo add vehicle to garage
             result = true;
          }
+         else
+         {
+            Vehicle[] newGarage = Arrays.copyOf(vehicles, vehicles.length+1);
+            newGarage[vehicles.length] = vehicle;
+            vehicles = newGarage;
+         }
       }
 
       return result;
@@ -35,5 +45,10 @@ public class Garage {
    @Override
    public String toString() {
       return "Garage{" + Arrays.toString(vehicles) + '}';
+   }
+
+   public String getInfo(int i)
+   {
+      return vehicles[i].getInfo();
    }
 }

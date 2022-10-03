@@ -1,8 +1,8 @@
 package classes.example2;
 
 public class Ship extends Vehicle {
-   public static final int MAX_PASSENGERS = 1000;
-   public static final int DEFAULT_PASSENGERS = 10;
+   public static final int MAX_PASSENGERS = 10000;
+   public static final int DEFAULT_PASSENGERS = 100;
    private String port;
    private int passengers;
 
@@ -41,6 +41,6 @@ public class Ship extends Vehicle {
 
    @Override
    public String toString() {
-      return getClass().getSimpleName() + " " + super.toString().replace("}", "") + ", base port: " + port + ", passengers: " + passengers + "}\n";
+      return System.lineSeparator() + getClass().getSimpleName() + " " + super.toString().replace("}", "") + ", base port: " + port + ", passengers: " + passengers + "}\n";
    }
 }

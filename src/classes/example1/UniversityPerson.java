@@ -6,8 +6,8 @@ import java.time.format.DateTimeFormatter;
 public class UniversityPerson extends Person {
    protected LocalDate entranceDate;
 
-   public UniversityPerson(String name, String address, LocalDate birthday, String phone, String email, LocalDate entranceDate) {
-      super(name, address, birthday, phone, email);
+   public UniversityPerson(String name, String nameEng, String address, LocalDate birthday, String phone, String email, LocalDate entranceDate) {
+      super(name, nameEng, address, birthday, phone, email);
       this.setEntranceDate(entranceDate);
    }
 
